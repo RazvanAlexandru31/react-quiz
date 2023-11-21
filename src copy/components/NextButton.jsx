@@ -1,14 +1,10 @@
 import React from "react";
-import { useQuiz } from "../context/QuizContext";
 
-const NextButton = () => {
-  const {dispatch, answer, index, questions}= useQuiz();
-
+const NextButton = ({ dispatch, answer, index, questions }) => {
   if (answer === null) return null;
-  
   return (
     <>
-      {index < questions.length -1 ? (
+      {index < questions -1 ? (
         <button
           className="btn btn-ui"
           onClick={() => dispatch({ type: "nextQuestion" })}
